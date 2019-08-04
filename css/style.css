@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(3000px, 0, 0);
+      transform: translate3d(3000px, 0, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(-25px, 0, 0);
+      transform: translate3d(-25px, 0, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(-5px, 0, 0);
+      transform: translate3d(-5px, 0, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(3000px, 0, 0);
+      transform: translate3d(3000px, 0, 0);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(-25px, 0, 0);
+      transform: translate3d(-25px, 0, 0);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(-5px, 0, 0);
+      transform: translate3d(-5px, 0, 0);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .bounceInRight {
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1 1;
+}
+
+.footer {
+    padding: 2rem 1.5rem !important;
+}
+
+.filters {
+  padding: 16px 24px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); 
+  position: sticky;
+  top: 52px;
+  background-color: #fff;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.filters__item {
+    margin-right: 24px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); 
+    position: sticky;
+    top: 0;
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.navbar__button {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar__button {
+    width: fit-content;
+  }
+  .navbar {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+} 
+
+.food-card {
+    flex: 0 0 300px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12); 
+    cursor: pointer;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.food-card .card-footer {
+    padding: 12px;
+    flex: 1 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.food-card__input {
+    width: 70px;
+}
+
+.food-card .card-footer {
+    justify-content: space-between;
+}
+
+.food-card .price {
+    margin: 4px;
+}
+
+.food-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.modal-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-content__control {
+    text-align: right;
+}
+
+.modal-content__caption {
+    margin-bottom: 12px;
+}
+
+.notification {
+    position: fixed;
+    z-index: 100;
+    top: 4px;
+    right: 4px;
+    left: 4px;
+    display: none;
+}
+
+.order {
+  list-style: decimal;
+}
+
+@media screen and (min-width: 1024px) {
+    .food-card:hover {
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.07);
+        transform: translate3d(0, 1px, 0);
+    }
+    .notification {
+        left: auto;
+        top: 80px;
+        right: 42px;
+    }
+}

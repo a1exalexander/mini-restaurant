@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+    />
+    <script src="https://kit.fontawesome.com/144e77a10a.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Test task JavaScript advanced</title>
+    <style>
+      * {
+        transition: ease 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+
+			<div id='notification' class="notification bounceInRight is-success">
+				<button id='close-notification' class="delete"></button>
+				<p id='notification-text' class='notification__heading is-size-4'>Заказ принят</p>
+				<p class='notification__text'>Ожидайте в течении 1 часа</p>
+			</div>
+			<div id='notification-warning' class="notification bounceInRight is-warning">
+				<button id='close-warning' class="delete"></button>
+				<p id='notification-text' class='notification__heading is-size-4'>Ви не вибрали ни одного блюда</p>
+				<p class='notification__text'>Сделайте сделайте заказ</p>
+			</div>
+			<div class="modal fadeIn" id='order-modal'>
+				<div class="modal-background" id='close-modal-bg'></div>
+				<div class="modal-content">
+					<div class='box'>
+							<p class='modal-content__caption is-size-5'>Заполните личные данные для оформления заказа</p>
+							<article class="message is-info">
+								<div class="message-header">
+									<p>Ваш заказ</p>
+								</div>
+								<div class="message-body">
+									<ul class='order' id='order'></ul>
+								</div>
+							</article>
+							<div class="field">
+									<label class="label">Имя</label>
+									<p class="control has-icons-left">
+										<input id='user-name' class="input" type="text" placeholder="Name">
+										<span class="icon is-small is-left">
+											<i class="fas fa-user"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<label class="label">E-mail</label>
+									<p class="control has-icons-left has-icons-right">
+										<input id='user-email' class="input" type="email" placeholder="Email">
+										<span class="icon is-small is-left">
+											<i class="fas fa-envelope"></i>
+										</span>
+										<span id='email-checked' class="icon is-small is-right">
+											<i class="fas fa-check"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<p class="control modal-content__control">
+										<button id='send-order' class="button is-link" disabled>
+											Отправить
+										</button>
+									</p>
+								</div>
+					</div>
+				</div>
+				<button class="modal-close is-large" id='close-modal' aria-label="close"></button>
+			</div>
+			<nav class="navbar " role="navigation" aria-label="main navigation">
+					<div class="navbar-start">
+						<div class="navbar-item">
+							<div class="field is-grouped is-grouped-multiline">
+								<div class="control">
+									Товаров в корзине:
+									<span id='amount' class="has-text-black has-text-weight-semibold is-size-5">0</span>
+								</div>
+	
+								<div class="control">
+									Общая сумма:
+									<span id='price' class="has-text-black has-text-weight-semibold is-size-5">0 грн</span>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="navbar-end">
+						<div class="navbar-item">
+							<a id='make-order' class="button navbar__button is-info">
+									Оформить заказ
+							</a>
+						</div>
+					</div>
+				</nav>
+    <header>
+      
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+							Test task JavaScript advanced
+            </h1>
+            <h2 class="subtitle">
+								Ресторан онлайн
+            </h2>
+          </div>
+        </div>
+      </section>
+		</header>
+		<div class="filters is-flex">
+        <div class="field filters__item">
+          <div class="control has-icons-left">
+            <div class="select">
+              <select id='food-type'>
+                <option value='all' selected>Все</option>
+                <option value='breakfast'>Заватраки</option>
+                <option value='first-course'>Первые блюда</option>
+                <option value='garnish'>Гарниры</option>
+              </select>
+            </div>
+            <div class="icon is-small is-left">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+				</div>
+				<div class="field filters__item">
+						<div class="control has-icons-left">
+							<div class="select">
+								<select id='food-price'>
+									<option value='all' selected>Все</option>
+									<option value='30'>До 30</option>
+									<option value='50'>До 50</option>
+									<option value='100'>До 100</option>
+									<option value='150'>До 150</option>
+								</select>
+							</div>
+							<div class="icon is-small is-left">
+									<i class="fas fa-hand-holding-usd"></i>
+							</div>
+						</div>
+					</div>
+      </div>
+    <main class="main">
+      
+      <section class="section">
+        <div class="container">
+          <div id='food' class='food-box'>
+							
+					</div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Test task JavaScript advanced</strong> by
+          <a href="https://github.com/a1exalexander">Alexander Ratushnyi</a>.
+          Styles by <a href="https://bulma.io">Bulma</a>.
+        </p>
+      </div>
+		</footer>
+		<script src="js/app.js"></script>
+  </body>
+</html>
