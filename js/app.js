@@ -122,20 +122,30 @@ class FoodShop {
   }
 
   _installAddFoodListener = () => {
+    const $notificationInfo = document.getElementById('notification-info');
+    $notificationInfo.addEventListener('click', () => {
+      $notificationInfo.style.display = 'none';
+    })
     document.querySelectorAll('[data-add-button]').forEach((el) => {
       if (!el.classList.contains('click-handler')) {
         el.classList.add('click-handler');
         el.addEventListener('click', () => {
           const foodId = el.dataset.addButton;
           const idx = this.food.findIndex(({id}) => Number(id) === Number(foodId));
-          const { foodAmount, totalFoodPrice } = this.food[idx];
+          const { foodAmount, totalFoodPrice, name } = this.food[idx];
           
           this.totalPrice += Number(totalFoodPrice);
           this.totalAmount += Number(foodAmount);
 
           this.$elAmount.innerHTML = this.totalAmount;
           this.$elPrice.innerHTML = `${this.totalPrice} грн`;
-
+ 
+          $notificationInfo.innerHTML = `В корзину добавлено ${foodAmount} порц. блюда "${name}" на сумму ${totalFoodPrice} грн`;
+          $notificationInfo.style.display = 'block';
+          const timer = setTimeout(() => {
+            $notificationInfo.style.display = 'none';
+            clearTimeout(timer);
+          }, 4000);
           this._addFoodToCart(this.food[idx]);
         })
       }

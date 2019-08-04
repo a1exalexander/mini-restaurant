@@ -154,19 +154,6 @@ body {
 
 .navbar__button {
   width: 100%;
-}
-
-@media screen and (min-width: 600px) {
-  .navbar__button {
-    width: fit-content;
-  }
-  .navbar {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .filters {
-    top: 52px;
-  }
 } 
 
 .food-card {
@@ -209,6 +196,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: calc(100% - 40px);
 }
 
 .modal-content__control {
@@ -222,14 +210,33 @@ body {
 .notification {
     position: fixed;
     z-index: 100;
-    top: 4px;
-    right: 4px;
-    left: 4px;
+    top: 12px;
+    right: 12px;
+    left: 12px;
     display: none;
 }
 
-.order {
-  list-style: decimal;
+.message-order {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar__button {
+    width: fit-content;
+  }
+  .navbar {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .filters {
+    top: 52px;
+  }
+  .order {
+    list-style: decimal;
+  }
+  .message-order {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1024px) {
