@@ -1,13 +1,5 @@
-const fetchFood = async () => {
-  const resp = await fetch('js/food.json');
-  const { food } = await resp.json();
-  const result = food.map((item) => {
-    item.foodAmount = 1;
-    item.totalFoodPrice = item.price;
-    return item;
-  })
-  return result;
-}
+import '../css/style.css';
+import food from './food.js';
 
 class FoodShop {
 
@@ -260,8 +252,5 @@ class FoodShop {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-
-  const food = await fetchFood();
-
   new FoodShop(food);
 });
