@@ -132,14 +132,14 @@ body {
   padding: 16px 24px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); 
   position: sticky;
-  top: 52px;
+  top: 98px;
   background-color: #fff;
   z-index: 2;
   flex-wrap: wrap;
 }
 
-.filters__item {
-    margin-right: 24px;
+.filters__item:first-child {
+  margin-right: 24px;
 }
 
 .navbar {
@@ -163,6 +163,9 @@ body {
   .navbar {
     justify-content: space-between;
     flex-direction: row;
+  }
+  .filters {
+    top: 52px;
   }
 } 
 
