@@ -7,7 +7,7 @@
     "dev": "parcel index.html",
     "build": "parcel build index.html",
     "predeploy": "parcel build index.html --public-url /mini-restaurant",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages-deploy"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,14 @@
     "cssnano": "^4.1.10",
     "gh-pages": "^2.1.0",
     "parcel-plugin-clean-dist": "0.0.6"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "predeploy"
+    ],
+    "commit": "deploy",
+    "noprompt": false
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5"
