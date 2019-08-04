@@ -208,7 +208,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .modal-content {
     width: calc(100% - 40px);
+  }
 }
 
 .modal-content__control {

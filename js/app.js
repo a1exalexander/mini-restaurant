@@ -141,11 +141,15 @@ class FoodShop {
           this.$elPrice.innerHTML = `${this.totalPrice} грн`;
  
           $notificationInfo.innerHTML = `В корзину добавлено ${foodAmount} порц. блюда "${name}" на сумму ${totalFoodPrice} грн`;
-          $notificationInfo.style.display = 'block';
-          const timer = setTimeout(() => {
-            $notificationInfo.style.display = 'none';
-            clearTimeout(timer);
-          }, 4000);
+          $notificationInfo.style.display = 'none';
+          setTimeout(() => {
+            $notificationInfo.style.display = 'block';
+            const timer = setTimeout(() => {
+              $notificationInfo.style.display = 'none';
+              clearTimeout(timer);
+            }, 4000);
+          }, 50);
+          
           this._addFoodToCart(this.food[idx]);
         })
       }
