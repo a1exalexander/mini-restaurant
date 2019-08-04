@@ -129,17 +129,21 @@ body {
 }
 
 .filters {
-  padding: 16px 24px;
+  padding: 12px 24px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); 
   position: sticky;
-  top: 98px;
+  top: 126px;
   background-color: #fff;
   z-index: 2;
   flex-wrap: wrap;
 }
 
+.navbar-item__info {
+  flex-direction: column;
+}
+
 .filters__item:first-child {
-  margin-right: 24px;
+  margin: 0 24px 0 0;
 }
 
 .navbar {
@@ -237,7 +241,10 @@ body {
     flex-direction: row;
   }
   .filters {
-    top: 52px;
+    top: 50px;
+  }
+  .navbar-item__info {
+    flex-direction: row;
   }
   .order {
     list-style: decimal;
