@@ -40,9 +40,9 @@ class FoodShop {
           </figure>
         </div>
       <footer class="card-footer">
-        <div>
-            <i class="fas fa-sort-numeric-up-alt"></i>
-            <input data-food-amount='${food.id}' min='1' value='${food.foodAmount}' data-food class="input food-card__input is-small" type="number" placeholder="Кол-во">
+        <div class='card-footer__row'>
+            <i class="fas fa-sort-numeric-up-alt is-size-5"></i>
+            <input data-food-amount='${food.id}' min='1' value='${food.foodAmount}' data-food class="input food-card__input" type="number" placeholder="Кол-во">
             <span data-total-price='${food.id}' class="tag is-black">${food.totalFoodPrice} грн</span>
         </div>
         <button data-add-button='${food.id}' class="button is-info is-small">Добавить</buttona>

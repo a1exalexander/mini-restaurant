@@ -157,7 +157,8 @@ body {
 } 
 
 .food-card {
-    flex: 0 0 300px;
+    flex: 1 1;
+    min-width: 280px;
     border-radius: 4px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12); 
     cursor: pointer;
@@ -173,8 +174,15 @@ body {
     align-items: flex-end;
 }
 
+.card-footer__row {
+    display: flex;
+    align-items: center;
+}
+
 .food-card__input {
-    width: 70px;
+  width: 70px;
+  font-size: 16px;
+  margin: 0 8px;
 }
 
 .food-card .card-footer {
@@ -186,9 +194,9 @@ body {
 }
 
 .food-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .modal-content {
@@ -239,6 +247,18 @@ body {
   }
 }
 
+@media screen and (min-width: 720px) {
+  .food-card {
+    flex: 0 0 calc(50% - 34px);
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .food-card {
+    flex: 0 0 calc(33% - 34px);
+  }
+}
+
 @media screen and (min-width: 1024px) {
     .food-card:hover {
         box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.07);
@@ -249,4 +269,19 @@ body {
         top: 80px;
         right: 42px;
     }
+    .food-card__input {
+      font-size: 0.75rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+  .food-card {
+    flex: 0 0 calc(25% - 34px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .food-card {
+    flex: 0 0 300px;
+  }
 }
