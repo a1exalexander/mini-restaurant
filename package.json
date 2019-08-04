@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
-    "predeploy": "npm run build",
+    "predeploy": "parcel build index.html --public-url /mini-restaurant",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a1exalexander/mini-restaurant.git"
+    "url": "https://github.com/a1exalexander/mini-restaurant.git"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/a1exalexander/mini-restaurant/issues"
   },
-  "homepage": "https://github.com/a1exalexander/mini-restaurant#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",

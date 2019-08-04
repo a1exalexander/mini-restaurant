@@ -14,6 +14,14 @@ class FoodShop {
     this._installListeners();
   }
 
+  static formatFood = (data) => {
+    return data.map((item) => {
+      item.foodAmount = 1;
+      item.totalFoodPrice = item.price;
+      return item;
+    })
+  }
+
   _getCardFood = (food) => {
     return (
       `<div data-food-id='${food.id}' class="card food-card">
@@ -252,5 +260,6 @@ class FoodShop {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  new FoodShop(food);
+
+  new FoodShop(FoodShop.formatFood(food));
 });
